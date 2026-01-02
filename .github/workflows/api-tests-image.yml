@@ -16,5 +16,5 @@ jobs:
         run: docker build -t gveljan/api-tests:latest .
       - name: Push API Tests image
         run: |
-          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker push gveljan/api-tests:latest
+          docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/api-tests:latest
